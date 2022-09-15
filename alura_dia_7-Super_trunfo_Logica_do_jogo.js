@@ -30,24 +30,27 @@ var carta1 = {
   function sortearCarta() {
     var numeroCartaMaquina = parseInt(Math.random() * 3);
     cartaMaquina = cartas[numeroCartaMaquina];
-     
+  
     var numeroCartaJogador = parseInt(Math.random() * 3);
     while (numeroCartaMaquina == numeroCartaJogador) {
       numeroCartaJogador = parseInt(Math.random() * 3);
     }
     cartaJogador = cartas[numeroCartaJogador];
     console.log(cartaJogador);
-
+  
     document.getElementById("btnSortear").disabled = true;
     document.getElementById("btnJogar").disabled = false;
     exibirOpcoes();
-}
+  }
   function exibirOpcoes() {
     var opcoes = document.getElementById("opcoes");
-    var opcoesTexto = ""
-
+    var opcoesTexto = "";
+  
     for (var atributo in cartaJogador.atributos) {
-      opcoesTexto += "<input type='radio' nome='atributo' value='" + atributo + "'>" +
+      opcoesTexto +=
+        "<input type='radio' nome='atributo' value='" +
+        atributo +
+        "'>" +
         atributo;
     }
     opcoes.innerHTML = opcoesTexto;
@@ -61,7 +64,7 @@ var carta1 = {
     }
   }
   function jogar() {
-    var atributoSelecionado = obtemAtributoSelecionado(); 
+    var atributoSelecionado = obtemAtributoSelecionado();
     var elementoResultado = document.getElementById("resultado");
     var valorCartaJogador = cartaJogador.atributo[atributoSelecionado];
     var valorCartaMaquina = cartaMaquina.atributo[atributoSelecionado];
@@ -73,6 +76,6 @@ var carta1 = {
     } else {
       elementoResultado.innerHTML = "Empatou";
     }
-    console.log(cartaMaquina)
+    console.log(cartaMaquina);
   }
   

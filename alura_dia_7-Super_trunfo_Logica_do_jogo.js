@@ -79,4 +79,6 @@ function sortearCarta() {
     }
     console.log(cartaMaquina);
   }
+
+  
   
